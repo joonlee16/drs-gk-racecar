@@ -1,0 +1,29 @@
+name: sample_oval
+track:
+  csv: package://tracks/sample_oval_centerline.csv
+  width: 7.0
+  progress_bins: 24
+  closed: true
+vehicle:
+  wheelbase: 2.7
+  lf: 1.2
+  lr: 1.5
+  mass: 1350.0
+  inertia_z: 2150.0
+  cornering_stiffness_front: 68000.0
+  cornering_stiffness_rear: 72000.0
+  max_steer_rad: 0.45
+  max_accel: 6.5
+  max_brake: 9.5
+  drag_coefficient: 0.38
+  wheel_radius: 0.33
+  chassis_size: [2.5, 1.2, 0.32]
+simulation:
+  dt: 0.05
+  max_steps: 500
+  lookahead_points: 5
+  lookahead_spacing_m: 6.0
+uncertainty:
+  history_length: 5
+  neighbor_count: 48
+  block_length: 25

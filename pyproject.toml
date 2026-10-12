@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uncertain-racecar-gym"
+version = "0.1.0"
+description = "JAX racecar simulator with empirical uncertainty, MPPI control, and a DRS gatekeeper."
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "imageio>=2.34,<3.0",
+  "imageio-ffmpeg>=0.5,<1.0",
+  "jax>=0.4.35,<1.0",
+  "numpy>=1.26,<3.0",
+  "pandas>=2.2,<3.0",
+  "pillow>=10.0",
+  "pybullet>=3.2.6,<4.0",
+  "pyyaml>=6.0,<7.0",
+  "scipy>=1.11,<2.0",
+]
+
+[project.optional-dependencies]
+cuda = [
+  "jax[cuda12]>=0.4.35,<1.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["uncertain_racecar_gym*", "drs_gatekeeper*"]
+
+[tool.setuptools.package-data]
+uncertain_racecar_gym = ["assets/**/*"]

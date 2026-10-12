@@ -1,0 +1,72 @@
+name: monza_nominal_controller_suite
+scenario: package://scenarios/monza_dallara_f317.yaml
+modes:
+- nominal
+- gaussian
+- empirical
+gaussian_std:
+- 0.7
+- 0.45
+- 0.3
+- 0.08
+notes: Auto-generated stress suite from track curvature and curvature-gradient heuristics.
+cases:
+- case_id: full_lap
+  description: Full lap from the nominal grid start.
+  start_mode: grid
+  initial_progress: null
+  initial_lateral_error: 0.0
+  initial_heading_error: 0.0
+  initial_speed: null
+  max_steps: 2000
+  tags:
+  - lap
+  - baseline
+- case_id: late_brake_corner_entry
+  description: High-speed approach into a major corner entry where late braking is
+    safety-critical.
+  start_mode: grid
+  initial_progress: 0.04066771418357141
+  initial_lateral_error: 0.0
+  initial_heading_error: 0.0
+  initial_speed: 24.0
+  max_steps: 260
+  tags:
+  - corner_entry
+  - braking
+  - safety
+- case_id: high_speed_turn_in
+  description: Straight-to-turn transition near the steepest increase in track curvature.
+  start_mode: grid
+  initial_progress: 0.4459217361455844
+  initial_lateral_error: 0.0
+  initial_heading_error: 0.0
+  initial_speed: 26.0
+  max_steps: 220
+  tags:
+  - turn_in
+  - high_speed
+- case_id: corner_exit_under_throttle
+  description: Corner exit with early throttle application after the main curvature
+    peak.
+  start_mode: grid
+  initial_progress: 0.17356023956264935
+  initial_lateral_error: 0.0
+  initial_heading_error: 0.0
+  initial_speed: 13.5
+  max_steps: 220
+  tags:
+  - corner_exit
+  - throttle
+- case_id: chicane_transition
+  description: Sign-changing curvature transition similar to a chicane or quick left-right
+    sequence.
+  start_mode: grid
+  initial_progress: 0.6865061204025454
+  initial_lateral_error: 0.0
+  initial_heading_error: 0.0
+  initial_speed: 20.0
+  max_steps: 240
+  tags:
+  - chicane
+  - transition
